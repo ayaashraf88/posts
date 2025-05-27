@@ -1,48 +1,37 @@
-GetPayIn Content Scheduler 🚀
+### GetPayIn Content Scheduler 🚀
 Backend Developer Coding Challenge: Content Scheduler
 A Laravel application with Filament PHP admin panel for scheduling and managing posts.
 
-Table of Contents
-Features
+### Table of Contents
+- Features
+- Requirements
+- Installation
+- Configuration
+- Usage
+- Admin Access
+- Queue Workers
+- Deployment
 
-Requirements
+### Features ✨
+- User authentication system
 
-Installation
+- Post management (CRUD operations)
 
-Configuration
+- Scheduled post publishing
 
-Usage
+- Admin dashboard with Filament PHP
 
-Admin Access
+- Queue system for background processing
+### Requirements 📋
+- PHP 8.1+
 
-Queue Workers
+- Laravel 10.x
 
-Testing
+- Composer 2.0+
 
-Deployment
+- MySQL 5.7+ / MariaDB 10.3+
 
-Technologies Used
-
-Features ✨
-User authentication system
-
-Post management (CRUD operations)
-
-Scheduled post publishing
-
-Admin dashboard with Filament PHP
-
-Queue system for background processing
-Requirements 📋
-PHP 8.1+
-
-Laravel 10.x
-
-Composer 2.0+
-
-MySQL 5.7+ / MariaDB 10.3+
-
-Installation 🛠️
+### Installation 🛠️
 * git clone https://github.com/ayaashraf88/posts.git
 * Install dependencies:
     - composer install
