@@ -32,7 +32,7 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 - MySQL 5.7+ / MariaDB 10.3+
 
 ### Installation 🛠️
-* git clone https://github.com/ayaashraf88/posts.git
+* ``` git clone https://github.com/ayaashraf88/posts.git ```
 * Install dependencies:
     - composer install
 * Set up environment:
