@@ -36,8 +36,8 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 * Install dependencies:
     - composer install
 * Set up environment:
-    - cp .env.example .env
-    - php artisan key:generate
+    - ``` cp .env.example .env ```
+    - ``` php artisan key:generate ```
 * Configure your database in .env:
     - DB_CONNECTION=mysql
     - DB_HOST=127.0.0.1
@@ -46,13 +46,13 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
     - DB_USERNAME=your_db_user
     - DB_PASSWORD=your_db_password
 * Run migrations and seeders:
-    - php artisan migrate --seed
+    - ``` php artisan migrate --seed ```
 ### Usage 🚀
 * Start the development server:
-    - php artisan serve
+    - ``` php artisan serve ```
 * Running Queue Workers
 For scheduled posts to publish automatically:
-    - php artisan queue:work
+    - ``` php artisan queue:work ```
 ### Admin Access 🔑
 - Access the Filament admin panel at: /admin
 
