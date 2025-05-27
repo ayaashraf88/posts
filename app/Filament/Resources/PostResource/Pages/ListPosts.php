@@ -42,7 +42,7 @@ class ListPosts extends ListRecords
             ->label('Platforms')
             ->badge()
             ->color('primary'),
-        ]);
+        ])->striped() ;
     }
 
     public function getTabs(): array

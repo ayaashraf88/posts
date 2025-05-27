@@ -33,13 +33,10 @@ protected function handleRecordUpdate(Model $record, array $data): Model
 }
 protected function afterSave(): void
 {
-    // --- Debugging Log: Confirm this line appears in storage/logs/laravel.log ---
     Log::info('EditPost: afterSave method is executing for Post ID: ' . $this->record->id);
 
     $scheduledTime = $this->record->scheduled_time;
     $postStatus = $this->record->status;
-
-
     if ($scheduledTime instanceof \Carbon\Carbon && $postStatus === 'scheduled') {
         Log::info('EditPost: Post is scheduled or re-scheduled. Dispatching UpdatePostState job for Post ID: ' . $this->record->id . ' with delay to ' . $scheduledTime->toDateTimeString());
         UpdatePostState::dispatch($this->record)

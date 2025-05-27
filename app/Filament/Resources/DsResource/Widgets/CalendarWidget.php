@@ -13,27 +13,52 @@ class MyCalendarWidget extends CalendarWidget
 {
     protected int | string | array $columnSpan = 'full';
 
-    protected function getView(): string
-    {
-        return 'dayGridMonth'; // Default view
-    }
+    // protected function getView(): string
+    // {
+    //     return 'dayGridMonth'; // Default view
+    // }
+    //register tooltip in the widget
+    public function getOptions(): array
+{
+    return [
+        'plugins' => ['tooltip'], // Enable tooltip plugin
+        'eventDidMount' => $this->getEventDidMountScript(),
+    ];
+}
+
+protected function getEventDidMountScript(): string
+{
+    return <<<JS
+        function(info) {
+            // Initialize tooltip
+            new bootstrap.Tooltip(info.el, {
+                title: info.event.extendedProps.tooltip?.text || '',
+                placement: 'top',
+                trigger: 'hover',
+                container: 'body'
+            });
+        }
+    JS;
+}
     public function getEvents(array $fetchInfo = []): Collection | array
     {
         return Post::query()
             ->where('user_id', auth()->id())
             ->whereNotNull('scheduled_time')
             ->get()
-            ->map(function (Post $post) {
-                return collect([
-                    'id' => $post->id,
-                    'title' => $post->title,
-                    'start' => $post->scheduled_time,
-                    'end' => $post->scheduled_time,
-                    'url' => PostResource::getUrl('edit', ['record' => $post]),
-
-                ]);
-            })
-            ->toArray();
+             ->map(function (Post $post) {
+            return [
+                'id' => $post->id,
+                'title' => $post->title . " (Status: " . $post->status . ")",
+                'start' => $post->scheduled_time,
+                'end' => $post->scheduled_time,
+                'tooltip' => [  // Tooltip on hover
+                    'title' => 'Post Status',
+                    'text' => $post->status,
+                ],
+            ];
+        })
+        ->toArray();
     }
 
 }

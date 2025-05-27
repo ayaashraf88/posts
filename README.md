@@ -33,7 +33,8 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 * Install dependencies:
     - composer install
 * Set up environment:
-    - ``` cp .env.example .env ```
+    - ``` cd posts```
+    - ``` copy .env.example .env ```
     - ``` php artisan key:generate ```
 * Configure your database in .env:
     - DB_CONNECTION=mysql
