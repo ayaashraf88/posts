@@ -53,11 +53,11 @@ Usage 🚀
 * Running Queue Workers
 For scheduled posts to publish automatically:
     - php artisan queue:work
-Admin Access 🔑
-Access the Filament admin panel at: /admin
+### Admin Access 🔑
+- Access the Filament admin panel at: /admin
 
-Default Admin Credentials:
+- Default Admin Credentials:
 
-Email: admin@getpayin.com
+    - Email: admin@getpayin.com
 
-Password: 12345678
+    - Password: 12345678
