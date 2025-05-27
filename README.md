@@ -9,9 +9,6 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 - Configuration
 - Usage
 - Admin Access
-- Queue Workers
-- Deployment
-
 ### Features ✨
 - User authentication system
 
