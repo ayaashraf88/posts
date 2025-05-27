@@ -47,7 +47,7 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
     - DB_PASSWORD=your_db_password
 * Run migrations and seeders:
     - php artisan migrate --seed
-Usage 🚀
+### Usage 🚀
 * Start the development server:
     - php artisan serve
 * Running Queue Workers
