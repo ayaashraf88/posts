@@ -31,9 +31,10 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 ### Installation 🛠️
 * ``` git clone https://github.com/ayaashraf88/posts.git ```
 * Install dependencies:
+    - ``` cd posts```
     - composer install
 * Set up environment:
-    - ``` cd posts```
+    
     - ``` copy .env.example .env ```
     - ``` php artisan key:generate ```
 * Configure your database in .env:
