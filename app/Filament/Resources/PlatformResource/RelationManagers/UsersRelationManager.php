@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class UsersRelationManager extends RelationManager
 {
     protected static string $relationship = 'users';
-    protected static ?string $title = 'Platforms';
+    protected static ?string $title = 'Activate Platform';
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -28,7 +28,7 @@ class UsersRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\Toggle::make('is_active')
+                Forms\Components\Toggle::make('Activate this platform ')
                     ->required(),
                 Forms\Components\Hidden::make('platform_id')
                     ->default(function () {
@@ -48,7 +48,7 @@ class UsersRelationManager extends RelationManager
         // dd(request()->route('platform_id'));
         return $table
             ->emptyStateHeading('No platform added yet')
-            ->emptyStateDescription('Add new platform')
+            ->emptyStateDescription('Activate this platform')
             ->recordTitleAttribute('is_active')
             ->query(
                 parent::table($table)
@@ -64,7 +64,7 @@ class UsersRelationManager extends RelationManager
 
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label('Add Platform')
+                    ->label('Activate this platform')
                     ->disableCreateAnother()
                     ->hidden(
                         fn() => $this->getOwnerRecord()->users()

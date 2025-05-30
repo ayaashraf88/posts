@@ -52,7 +52,7 @@ A Laravel application with Filament PHP admin panel for scheduling and managing 
 For scheduled posts to publish automatically:
     - ``` php artisan queue:work ```
 ### Admin Access 🔑
-- Access the Filament admin panel at: /admin
+- Access the Filament admin panel at: /GetPayIn
 
 - Default Admin Credentials:
 

@@ -60,7 +60,7 @@ class CreatePost extends CreateRecord
                     ->disk('user')
                     ->visibility('public') // Set visibility during upload
                     ->uploadingMessage('Uploading image please wait...'),
-                    Forms\Components\DatePicker::make('scheduled_time')
+                    Forms\Components\DateTimePicker::make('scheduled_time')
                     ->minDate(now()),
                 Forms\Components\Select::make('platform')
                 ->relationship('platforms', 'name', fn (Builder $query) => $query->whereHas('users', function ($query) {

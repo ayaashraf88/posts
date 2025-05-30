@@ -74,7 +74,7 @@ protected function afterSave(): void
                     ->imageResizeTargetHeight(800) 
                     ->uploadingMessage('Uploading image please wait...')
                     ->imagePreviewHeight('250'), 
-                    Forms\Components\DatePicker::make('scheduled_time')
+                    Forms\Components\DateTimePicker::make('scheduled_time')
                     ->minDate(now()),
                 Forms\Components\Select::make('platform')
                 ->relationship('platforms', 'name', fn (Builder $query) => $query->whereHas('users', function ($query) {
